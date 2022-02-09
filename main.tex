@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{authblk}
+\usepackage[dvipsnames]{xcolor}
+
+
+\title{Pinchuk Ruslan IA-032 code style}
+\author{Руслан Пинчук ИА-032;}
+\affil{SibSUTIS, email: boss.ruslan1212@inbox.ru}
+\date{February 2022}
+\affil{github: NelicePriyatniy}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Создание Код-Стайла для C++. 
+
+\section{C++}
+\subsection{Version}
+Используется версия C++199711.
+\subsection{Header Files}
+Рекомендации разделяются на степень важности: обязательные, настоятельно рекомендуемые и общие.\\
+Основная цель рекомендаций — улучшение читаемости и, следовательно, ясности и лёгкости поддержки, а также общего качества кода.\\
+\\\\
+\colorbox{red}{Рассмотрим общие рекомендации:} \\
+\\
+1. Допускаются любые нарушения рекомендаций, если это улучшает читаемость.
+\\
+2. Правила могут быть нарушены, если против них есть персональные возражения.
+Это попытка создать набор общих рекомендаций, не навязывая всем единый стиль. Опытные программисты обычно всё равно подгоняют стиль под себя. 
+\newpage
+\colorbox{green}{3. Скобки и пробелы:}\\
+3.1 Отделяйте пробелами фигурные скобки: \
+\begin{tabular}{ | l | l | l | }
+\hline
+int x = 3;\\
+int y = 7;\\
+double z = 4.25;\\
+\\
+x++;\\
+if (a == b) \{\\
+    foo();\\\} \\
+\hline
+\end{tabular}
+\\
+3.2 Ставьте пробелы между операторами и операндами:
+
+\begin{tabular}{ | l | l | l | }
+\hline
+int x = (a + b) * c / d + foo(); \\
+\hline
+\end{tabular}\\
+\\\\
+\colorbox{green}{4. Соглашения об именовании:}
+\\\\
+4.1 Имена, представляющие типы, должны быть обязательно написаны в смешанном регистре, начиная с верхнего.
+\\
+\begin{tabular}{ | l | l | l | }
+\hline
+\colorbox{BurntOrange}{Line}, SavingsAccount \\
+\hline
+\end{tabular}
+\\\\
+4.2 Имена переменных должны быть записаны в смешанном регистре, начиная с нижнего.
+\\
+\begin{tabular}{ | l | l | l | }
+\hline
+\colorbox{BurntOrange}{line}, savingsAccount \\
+\hline
+\end{tabular}
+\\\\
+4.3 Названия методов и функций должны быть глаголами, быть записанными в смешанном регистре и начинаться с нижнего.
+\\
+\begin{tabular}{ | l | l | l | }
+\hline
+\colorbox{Blue}{getName}  \colorbox{BurntOrange}{()}, \colorbox{Blue}{computeTotalWidth}  \colorbox{BurntOrange}{()}\\
+\hline
+\end{tabular}
+\\\\
+4.4 Все имена следует записывать по-английски.
+\\
+\begin{tabular}{ | l | l | l | }
+\hline
+computeAverage();   // НЕЛЬЗЯ: compAvg(); \\
+\hline
+\end{tabular}
+\\\\
+4.5 Следует избегать сокращений в именах.
+\\
+\begin{tabular}{ | l | l | l | }
+\hline
+\colorbox{BurntOrange}{line}, savingsAccount \\
+\hline
+\end{tabular}\\\\
+\colorbox{green}{5. Базовые выражения С++}
+\\\\
+5.1 Используйте оператор вывода cout вместо printf
+\\
+\begin{tabular}{ | l | l | l | }
+\hline
+cout << "Hello, world!" << endl; \\
+\hline
+\end{tabular}
+\\\\
+5.2 Используйте цикл for, когда вы знаете количество повторений, а цикл while, когда количество повторений неизвестно
+\\\\
+5.3 Если у вас есть выражение if / else, которое возвращает логическое значение, возвращайте результаты теста напрямую:
+\\
+\begin{tabular}{ | l | l | l | }
+\hline
+return score1 == score2; \\
+\hline
+\end{tabular}
+\\\\
+5.4 Никогда не проверяйте значения логического типа, используя == или != с true или false:
+\\\\
+\colorbox{green}{6. Комментарии}\\
+
+6.1 Заглавный комментарий. Размещайте заглавный комментарий, который описывает назначение файла, вверху каждого файла. Предположите, что читатель вашего комментария является продвинутым программистом, но не кем-то, кто уже видел ваш код ранее.\\
+
+6.2 Заголовок функции / конструктора. Разместите заголовочный комментарий на каждом конструкторе и функции вашего файла. Заголовок должен описывать поведение и / или цель функции.\\
+
+6.3 Параметры / возврат. Если ваша функцию принимает параметры, то кратко опишите их цель и смысл. Если ваша функция возвращает значение — кратко опишите, что она возвращает.\\
+
+6.4 Исключения. Если ваша функция намеренно выдает какие-то исключения для определенных ошибочных случаев, то это требует упоминания.\\
+
+6.5 Комментарии на одной строке. Если внутри функции имеется секция кода, которая длинна, сложна или непонятна, то кратко опишите её назначение.\\
+
+6.6 TODO. Следует удалить все // TODO комментарии перед тем, как заканчивать и сдавать программу.
+
+\newpage
+\section{Список литературы:}
+\\
+Сайт: https://tproger.ru/translations/stanford-cpp-style-guide/\\
+Который использовал материалы :\\ https://stanford.edu/class/archive/cs/cs106b/cs106b.1158/styleguide.shtml\\
+\\
+Документ: https://habr.com/ru/post/172091/\\
+Использующий материалы:\\
+Code Complete, Steve McConnell — Microsoft Press
+\\\\
+Programming in C++, Rules and Recommendations, M Henricson, e. Nyquist, Ellemtel (Swedish telecom): http://www.doc.ic.ac.uk/lab/cplus/c%2b%2b.rules/ 
+\\\\
+Wildfire C++ Programming Style, Keith Gabryelski, Wildfire Communications Inc.: http://www.wildfire.com/~ag/Engineering/Development/C++Style/
+\\\\
+C++ Coding Standard, Todd Hoff: http://www.possibility.com/Cpp/CppCodingStandard.htm
+\\\\
+Doxygen documentation system: http://www.stack.nl/~dimitri/doxygen/index.html
+
+\end{document}
